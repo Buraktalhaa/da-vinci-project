@@ -1,8 +1,8 @@
 import { Route, Routes, Navigate } from "react-router-dom";
 import type { ReactNode } from "react";
 import Home from "../pages/Home";
-import Posts from "../pages/Posts";
-import Users from "../pages/Users";
+import Posts from "../pages/PostsPage";
+import Users from "../pages/UsersPage";
 import MainLayout from "../layout/MainLayout";
 import Login from "../pages/Login";
 

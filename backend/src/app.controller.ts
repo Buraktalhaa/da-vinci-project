@@ -8,7 +8,5 @@ export class AppController {
   @Get()
   getHello(): string {
     return this.appService.getHello();
-    await new Promise(resolve => setTimeout(resolve, 10000));
-    return this.appService.getHello();
   }
 }
