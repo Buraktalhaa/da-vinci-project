@@ -8,7 +8,7 @@ export default function MainLayout() {
     
       <div className="flex-1 flex flex-col">
         <Header />
-        <main className="w-full pt-12 pb-4 bg-gray-50 dark:bg-gray-800">
+        <main className="w-full pt-12 pb-4 bg-gray-50 dark:bg-gray-800 py-6 px-4">
           <Outlet />
         </main>
       </div>
