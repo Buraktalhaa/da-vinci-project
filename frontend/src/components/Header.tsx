@@ -7,7 +7,7 @@ const menuItems = [
   { title: "Users", href: "/users" },
 ];
 
-const Header = () => {
+export default function Header() {
   const navigate = useNavigate();
 
   const logout = () => {
@@ -56,5 +56,3 @@ const Header = () => {
     </header>
   );
 };
-
-export default Header;

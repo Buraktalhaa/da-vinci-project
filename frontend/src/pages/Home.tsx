@@ -6,7 +6,6 @@ import { Link } from "react-router-dom"
 export default function Home() {
   return (
     <div className="max-w-5xl mx-auto py-10 px-6 space-y-10">
-      {/* Başlık ve Açıklama */}
       <div className="text-center space-y-3">
         <h1 className="text-3xl font-bold">User & Post Management System</h1>
         <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">

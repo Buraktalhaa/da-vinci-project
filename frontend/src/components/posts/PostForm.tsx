@@ -1,25 +1,10 @@
 import { useForm } from 'react-hook-form';
-import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage, FormDescription } from '../ui/form';
 import { usePosts } from '../../hooks/usePosts';
-
-const createPostSchema = z.object({
-  userId: z.string().min(1, 'User is required'),
-  title: z.string().max(50, 'Title must be at most 50 characters'),
-  body: z.string().max(200, 'Body must be at most 200 characters'),
-});
-
-type CreatePostFormData = z.infer<typeof createPostSchema>;
-
-interface PostFormProps {
-  users: { id: string; name: string }[];
-  post?: { id: string; userId: string; title: string; body: string }; // <- burayı ekledik
-  onCancel: () => void;
-  onSuccess: () => void;
-}
+import { createPostSchema, type CreatePostFormData, type PostFormProps } from '@/types/Posts.types';
 
 export default function PostForm({ users, post, onCancel, onSuccess }: PostFormProps) {
   const { createPost, saveEdit } = usePosts();
@@ -35,10 +20,8 @@ export default function PostForm({ users, post, onCancel, onSuccess }: PostFormP
 
   const onSubmit = async (data: CreatePostFormData) => {
     if (post) {
-      // Edit modu
       await saveEdit(post.id, data);
     } else {
-      // Create modu
       await createPost(data.userId, data.title, data.body);
     }
     form.reset();

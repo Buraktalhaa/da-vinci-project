@@ -104,7 +104,6 @@ export default function PostsPage() {
             )}
           </>
         )}
-
       </div>
     </div>
   );
